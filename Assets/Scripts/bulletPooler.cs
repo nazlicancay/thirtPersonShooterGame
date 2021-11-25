@@ -58,6 +58,8 @@ public class bulletPooler : MonoBehaviour
         GameObject objectToSpawn = PoolDictionary[tag].Dequeue();
         
         objectToSpawn.SetActive(true);
+       Rigidbody objectRb = objectToSpawn.GetComponent<Rigidbody>();
+        objectRb.AddForce(0,0,100);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 
