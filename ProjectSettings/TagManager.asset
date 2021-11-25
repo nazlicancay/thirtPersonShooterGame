@@ -5,8 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - bullet
-  - finsihLine
   - finishLine
+  - line
+  - ground
   layers:
   - Default
   - TransparentFX

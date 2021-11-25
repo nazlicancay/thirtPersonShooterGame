@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,6 +6,8 @@ using UnityEngine;
 public class SetFalseBullet : MonoBehaviour
 {
     // Start is called before the first frame update
+    public bool isKillable = true;
+  
     void Start()
     {
         
@@ -13,9 +16,15 @@ public class SetFalseBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.transform.position.z < -25)
+        
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("ground"))
         {
-            //gameObject.SetActive(false);
+            isKillable = false;
+
         }
     }
 }

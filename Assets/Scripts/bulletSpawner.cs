@@ -12,16 +12,30 @@ public class bulletSpawner : MonoBehaviour
     public GameObject player;
     void Start()
     {
+        StartCoroutine(SpawnBall());
         _bulletPooler = bulletPooler.Instance;
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
-        vector = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z+1);
-        _bulletPooler.SpawnFromPool("bullet", vector , Quaternion.identity);
+       
        
     }
 
-   
+    IEnumerator SpawnBall()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(0.5f);
+            vector = new Vector3(player.transform.position.x, player.transform.position.y, player.transform.position.z+1);
+            _bulletPooler.SpawnFromPool("bullet", vector , Quaternion.identity);
+
+            
+        }
+        
+        
+       
+        
+    }
 }

@@ -24,10 +24,7 @@ public class bulletPooler : MonoBehaviour
     private void Awake()
     {
         Instance = this;
-    }
-
-    void Start()
-    {
+        
         PoolDictionary = new Dictionary<string, Queue<GameObject>>();
 
         foreach (Pool pool in pools)
@@ -43,6 +40,11 @@ public class bulletPooler : MonoBehaviour
             
             PoolDictionary.Add(pool.tag,objectPool);
         }
+
+    }
+
+    void Start()
+    {
        
         
     }
@@ -59,7 +61,7 @@ public class bulletPooler : MonoBehaviour
         
         objectToSpawn.SetActive(true);
        Rigidbody objectRb = objectToSpawn.GetComponent<Rigidbody>();
-        objectRb.AddForce(0,0,100);
+        objectRb.AddForce(0,5,15,ForceMode.Impulse);
         objectToSpawn.transform.position = position;
         objectToSpawn.transform.rotation = rotation;
 

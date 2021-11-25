@@ -8,6 +8,8 @@ public class EnemyAI : MonoBehaviour
 {
     public NavMeshAgent agent;
     public Transform target;
+    public SetFalseBullet bullet;
+    
 
     private void Update()
     {
@@ -20,14 +22,14 @@ public class EnemyAI : MonoBehaviour
 
     }
 
-    public void OnTriggerEnter(Collider other)
+    public void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("bullet"))
+        if (other.gameObject.CompareTag("bullet") && bullet.isKillable )
         {
             Debug.Log("vuruldu");
-            GameManager.GameManagerInstance.highScore += 10;
+            GameManager.GameManagerInstance.Score += 10;
             Destroy(gameObject);
-            other.gameObject.SetActive(false);
+            
          
         }
     }
