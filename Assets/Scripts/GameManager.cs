@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     public static GameManager GameManagerInstance;
     public int highScore = 0;
+    public bool shootable = false;
 
     private void Awake()
     {

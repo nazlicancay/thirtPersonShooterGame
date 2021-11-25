@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
 
      private void Update()
      {
-         capsuleTransform.position+= Vector3.forward*5 * Time.deltaTime;
+         capsuleTransform.position+= Vector3.forward*2 * Time.deltaTime;
      }
 
      public void TestInput(InputAction.CallbackContext inputAction)

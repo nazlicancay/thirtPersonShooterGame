@@ -5,7 +5,7 @@ using UnityEngine;
 public class MoveBullet : MonoBehaviour ,IPooledObject
 {
     // Start is called before the first frame update
-    private float _force = 60;
+    private float _force = 100;
    public void OnObjectSpawn()
     {
         GetComponent<Rigidbody>().velocity = new Vector3(0,0, _force);

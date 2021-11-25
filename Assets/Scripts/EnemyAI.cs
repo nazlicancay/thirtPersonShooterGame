@@ -12,11 +12,12 @@ public class EnemyAI : MonoBehaviour
     private void Update()
     {
       
-        if (Vector3.Distance(target.position,transform.position) > 1)
+        if (Vector3.Distance(target.position,transform.position) > 0.8)
         {
             agent.SetDestination(target.position);
         }
         
+
     }
 
     public void OnTriggerEnter(Collider other)
