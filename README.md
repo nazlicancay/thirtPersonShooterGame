@@ -9,4 +9,4 @@ player shootes the alien enemys and gets a hifh score
 
 
 
-<img src=https://github.com/nazlicancay/thirtPersonShooterGame/blob/main/game.gif width="500" height="500"  />
+<img src=https://github.com/nazlicancay/thirtPersonShooterGame/blob/main/game.gif width="350" height="500"  />
